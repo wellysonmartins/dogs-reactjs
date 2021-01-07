@@ -7,22 +7,23 @@ body {
   margin: 0px;
   color: #333;
   --type-first: Helvetica, Arial, sans-serif;
-  --type-second: "Spectral", Georgia;
+  --type-second: 'Spectral', Georgia;
   font-family: var(--type-first);
 }
 
 h1,
 h2,
 h3,
-h4 {
-  margin: 0;
+h4,
+p {
+  margin: 0px;
 }
 
 ul,
 li {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
 }
 
 img {
@@ -30,16 +31,16 @@ img {
   max-width: 100%;
 }
 
-a {
-  text-decoration: none;
-}
-
-buttin,
+button,
 input {
   display: block;
   font-size: 1rem;
   font-family: var(--type-first);
   color: #333;
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
