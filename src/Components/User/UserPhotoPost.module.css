@@ -16,7 +16,7 @@
 }
 
 .preview::after {
-  content: "";
+  content: '';
   display: block;
   height: 0px;
   padding-bottom: 100%;

@@ -1,10 +1,10 @@
-import React from "react";
-import { PHOTOS_GET } from "../../Api";
-import useFetch from "../../Hooks/useFetch";
-import Error from "../Helper/Error";
-import Loading from "../Helper/Loading";
-import FeedPhotosItem from "./FeedPhotosItem";
-import styles from "./FeedPhotos.module.css";
+import React from 'react';
+import FeedPhotosItem from './FeedPhotosItem';
+import useFetch from '../../Hooks/useFetch';
+import { PHOTOS_GET } from '../../Api';
+import Error from '../Helper/Error';
+import Loading from '../Helper/Loading';
+import styles from './FeedPhotos.module.css';
 
 const FeedPhotos = ({ setModalPhoto }) => {
   const { data, loading, error, request } = useFetch();
@@ -12,7 +12,7 @@ const FeedPhotos = ({ setModalPhoto }) => {
   React.useEffect(() => {
     async function fetchPhotos() {
       const { url, options } = PHOTOS_GET({ page: 1, total: 6, user: 0 });
-      const { response, json } = await request(url, options);
+      const { json } = await request(url, options);
       console.log(json);
     }
     fetchPhotos();

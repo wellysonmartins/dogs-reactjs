@@ -1,34 +1,34 @@
-import React from "react";
-import styles from "./UserPhotoPost.module.css";
-import useForm from "../../Hooks/useForm";
-import useFetch from "../../Hooks/useFetch";
-import Input from "../Forms/Input";
-import Button from "../Forms/Button";
-import Error from "../Helper/Error";
-import { PHOTO_POST } from "../../Api";
-import { useNavigate } from "react-router";
+import React from 'react';
+import styles from './UserPhotoPost.module.css';
+import useForm from '../../Hooks/useForm';
+import useFetch from '../../Hooks/useFetch';
+import Input from '../Forms/Input';
+import Button from '../Forms/Button';
+import Error from '../Helper/Error';
+import { PHOTO_POST } from '../../Api';
+import { useNavigate } from 'react-router-dom';
 
 const UserPhotoPost = () => {
   const nome = useForm();
-  const peso = useForm("number");
-  const idade = useForm("number");
+  const peso = useForm('number');
+  const idade = useForm('number');
   const [img, setImg] = React.useState({});
   const { data, error, loading, request } = useFetch();
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    if (data) navigate("/conta");
+    if (data) navigate('/conta');
   }, [data, navigate]);
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit(event) {
+    event.preventDefault();
     const formData = new FormData();
-    formData.append("img", img.raw);
-    formData.append("nome", nome.value);
-    formData.append("peso", peso.value);
-    formData.append("idade", idade.value);
+    formData.append('img', img.raw);
+    formData.append('nome', nome.value);
+    formData.append('peso', peso.value);
+    formData.append('idade', idade.value);
 
-    const token = window.localStorage.getItem("token");
+    const token = window.localStorage.getItem('token');
     const { url, options } = PHOTO_POST(formData, token);
     request(url, options);
   }
@@ -53,7 +53,11 @@ const UserPhotoPost = () => {
           id="img"
           onChange={handleImgChange}
         />
-        {loading ? <Button>Enviando...</Button> : <Button>Enviar</Button>}
+        {loading ? (
+          <Button disabled>Enviando...</Button>
+        ) : (
+          <Button>Enviar</Button>
+        )}
         <Error error={error} />
       </form>
       <div>
