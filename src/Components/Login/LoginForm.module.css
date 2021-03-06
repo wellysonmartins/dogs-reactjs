@@ -10,7 +10,7 @@
 }
 
 .perdeu::after {
-  content: "";
+  content: '';
   height: 2px;
   width: 100%;
   background: currentColor;
@@ -33,7 +33,7 @@
 }
 
 .subtitle::after {
-  content: "";
+  content: '';
   display: block;
   background: #ddd;
   height: 0.5rem;
