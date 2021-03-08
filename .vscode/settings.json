@@ -1,10 +1,10 @@
-{
-  "files.exclude": {
-    ".gitignore": true,
-    "package-lock.json": true,
-    "public": true,
-    "yarn.lock": true,
-    "node_modules": true,
-    ".eslintcache": true
-  }
-}
+// {
+//   "files.exclude": {
+//     ".gitignore": true,
+//     "package-lock.json": true,
+//     "public": true,
+//     "yarn.lock": true,
+//     "node_modules": true,
+//     ".eslintcache": true
+//   }
+// }
